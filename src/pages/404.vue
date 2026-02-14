@@ -1,6 +1,4 @@
-<script setup lang="ts">
-
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <div class="page-margin-x mt-12">
@@ -9,11 +7,9 @@
     <p class="text-center align-self-center mb-16">找不到请求的页面。</p>
 
     <div class="justify-center d-flex flex-row flex-wrap">
-      <v-btn color="blue-lighten-3" prepend-icon="mdi-home" to="/">返回首页</v-btn>
+      <v-btn color="green" prepend-icon="mdi-home" to="/">返回首页</v-btn>
     </div>
   </div>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>

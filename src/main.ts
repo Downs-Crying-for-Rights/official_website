@@ -16,20 +16,20 @@ import App from './App.vue';
 import 'virtual:svg-icons-register';
 
 import './styles/main.scss';
-import {ViteSSG} from "vite-ssg";
-import {routes} from "vue-router/auto-routes";
-import * as Sentry from "@sentry/vue";
+import { ViteSSG } from 'vite-ssg';
+import { routes } from 'vue-router/auto-routes';
+import * as Sentry from '@sentry/vue';
 import chalk from 'chalk';
 
 const asciiLogo =
-  "---------------------------------------------------------------\n" +
-  "   ____  _                   ___       _                    _ \n" +
-  "  / ___|| |  __ _  ___  ___ |_ _| ___ | |  __ _  _ __    __| |\n" +
-  " | |    | | / _` |/ __|/ __| | | / __|| | / _` || '_ \\  / _` |\n" +
-  " | |___ | || (_| |\\__ \\\\__ \\ | | \\__ \\| || (_| || | | || (_| |\n" +
-  "  \\____||_| \\__,_||___/|___/|___||___/|_| \\__,_||_| |_| \\__,_|\n" +
-  "---------------------------------------------------------------\n" +
-  "ClassIsland —— 一款适用于班级大屏的课表信息显示工具，可以一目了然地显示各种信息。\n";
+  '---------------------------------------------------------------\n' +
+  '  ____   ____  ____    学生互助频道\n' +
+  ' |  _ \\ / ___||  _ \\   DCR - Student Help Channel\n' +
+  ' | | | | |    | |_) |  温暖 · 免费 · 专业 · 易用\n' +
+  ' | |_| | |___ |  _ <   \n' +
+  ' |____/ \\____||_| \\_\\  \n' +
+  '---------------------------------------------------------------\n' +
+  'DCR 学生互助频道 —— 为学生提供无偿互助服务的温暖平台\n';
 
 // 创建Vue应用实例，指定根组件为App
 export const createApp = ViteSSG(
@@ -39,25 +39,27 @@ export const createApp = ViteSSG(
     // 在这里使用例如 app.use(pinia) 或者 router.use()
     registerPlugins(app);
     if (isClient) {
-      Sentry.init({
-        app,
-        dsn: "https://5f8b7ae1646638a671474219382cfb7b@todayeatsentry.classisland.tech:21815/8",
-        integrations: [
-          Sentry.browserTracingIntegration({ router }),
-          Sentry.replayIntegration(),
-        ],
-        // Tracing
-        tracesSampleRate: 0.1, //  Capture 100% of the transactions
-        // Set 'tracePropagationTargets' to control for which URLs distributed tracing should be enabled
-        tracePropagationTargets: ["localhost", /^https:\/\/get\.classisland\.tech/],
-        // Session Replay
-        replaysSessionSampleRate: 0.1, // This sets the sample rate at 10%. You may want to change it to 100% while in development and then sample at a lower rate in production.
-        replaysOnErrorSampleRate: 1.0, // If you're not already sampling the entire session, change the sample rate to 100% when sampling sessions where errors occur.
-      });
+      // Sentry 已禁用 - 如需启用请配置 DSN
+      // Sentry.init({
+      //   app,
+      //   dsn: "YOUR_DSN_HERE",
+      //   integrations: [
+      //     Sentry.browserTracingIntegration({ router }),
+      //     Sentry.replayIntegration(),
+      //   ],
+      //   tracesSampleRate: 0.1,
+      //   tracePropagationTargets: ["localhost", /^https:\/\/xshzpd\.mysxl\.cn/],
+      //   replaysSessionSampleRate: 0.1,
+      //   replaysOnErrorSampleRate: 1.0,
+      // });
 
-      console.log(chalk.hex("#00bfff")(asciiLogo) + '\n' + chalk.hex("#FF9AFC")("⌈不想前进的时候，就暂且停下脚步吧。⌋") + '\n'
-        + chalk.hex("#81ddff")("⌈愿我们在那鲜花芬芳的西风尽头重逢。⌋"))
-
+      console.log(
+        chalk.hex('#00bfff')(asciiLogo) +
+          '\n' +
+          chalk.hex('#FF9AFC')('⌈收费不存在 · 互助永相伴⌋') +
+          '\n' +
+          chalk.hex('#81ddff')('⌈愿每一位学生都能勇敢发声，维护自己的权益⌋')
+      );
     }
   }
-)
+);

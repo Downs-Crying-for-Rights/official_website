@@ -1,11 +1,27 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.v-application {
+  overflow-x: hidden;
+}
+
 .main-content {
   overflow-x: hidden;
 }
 
-.page-margin-x, .margin-x {
+.page-margin-x,
+.margin-x {
   margin: 0 42px;
   @media (max-width: 600px) {
-    margin: 0 12px
+    margin: 0 12px;
   }
 
   max-width: 1200px;
@@ -16,10 +32,11 @@
   }
 }
 
-.page-margin-x-wide, .margin-x-wide {
+.page-margin-x-wide,
+.margin-x-wide {
   margin: 0 42px;
   @media (max-width: 600px) {
-    margin: 0 12px
+    margin: 0 12px;
   }
 
   max-width: 1400px;
