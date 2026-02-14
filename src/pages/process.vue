@@ -1,109 +1,85 @@
 <template>
-  <div class="content margin-x">
-    <h1 class="text-h3 mb-8">互助流程</h1>
+  <div class="content margin-x page-shell">
+    <PageHero title="互助流程" subtitle="简单四步，快速加入 DCR 学生互助频道，开启互助之旅。" />
 
-    <v-alert type="info" variant="tonal" class="mb-8">
+    <v-alert type="info" variant="tonal" class="mt-6 mb-10 rounded-lg" border="start">
       <v-alert-title>流程概览</v-alert-title>
-      简单四步，即可加入 DCR 学生互助频道，开始您的互助之旅。
+      所有流程均以“无偿、隐私保护、可追踪”为原则。你可以随时查看进展并获取帮助。
     </v-alert>
 
-    <v-timeline side="end" align="start">
-      <v-timeline-item
-        v-for="(step, index) in steps"
-        :key="index"
-        :dot-color="step.color"
-        size="large"
-      >
-        <template v-slot:icon>
-          <v-icon :icon="step.icon" />
-        </template>
-        <template v-slot:opposite>
-          <div class="text-h6">步骤 {{ index + 1 }}</div>
-        </template>
-        <v-card>
-          <v-card-title class="text-h5">{{ step.title }}</v-card-title>
-          <v-card-text>
-            <p class="text-body-1 mb-4">{{ step.description }}</p>
-            <v-list v-if="step.details" density="compact">
-              <v-list-item v-for="(detail, i) in step.details" :key="i" :prepend-icon="detail.icon">
-                <v-list-item-title>{{ detail.text }}</v-list-item-title>
-              </v-list-item>
-            </v-list>
-            <v-btn
-              v-if="step.action"
-              :color="step.color"
-              :to="step.action.to"
-              :href="step.action.href"
-              :target="step.action.href ? '_blank' : undefined"
-              class="mt-4"
-            >
-              {{ step.action.text }}
-            </v-btn>
-          </v-card-text>
-        </v-card>
-      </v-timeline-item>
+    <v-timeline side="end" align="start" class="process-timeline">
+      <ProcessTimelineStep v-for="(step, index) in steps" :key="step.title" :step="step" :index="index" />
     </v-timeline>
 
-    <v-card class="mt-8 mb-8" variant="tonal" color="green-lighten-5">
-      <v-card-title class="text-h5">
-        <v-icon icon="mdi-check-circle" class="mr-2" />
-        成功案例
-      </v-card-title>
-      <v-card-text>
-        <p class="text-body-1 mb-4">
-          许多学生通过我们的互助平台成功反映了违规补课问题，并获得了满意的处理结果。
-          以下是一些脱敏后的成功案例：
-        </p>
-        <v-expansion-panels>
-          <v-expansion-panel v-for="(example, index) in successExamples" :key="index">
-            <v-expansion-panel-title>
-              <v-icon :icon="example.icon" class="mr-2" />
-              {{ example.title }}
-            </v-expansion-panel-title>
-            <v-expansion-panel-text>
-              {{ example.content }}
-            </v-expansion-panel-text>
-          </v-expansion-panel>
-        </v-expansion-panels>
+    <v-row class="mt-4" dense>
+      <v-col cols="12" md="6">
+        <v-card class="info-card h-100" variant="tonal" color="green-lighten-5">
+          <v-card-title class="text-h6 d-flex align-center ga-2">
+            <v-icon icon="mdi-check-circle" />
+            成功案例
+          </v-card-title>
+          <v-card-text>
+            <p class="text-body-2 mb-4 text-medium-emphasis">
+              以下内容均已脱敏，展示了平台在不同场景下的互助成效。
+            </p>
+            <v-expansion-panels>
+              <v-expansion-panel v-for="(example, index) in successExamples" :key="index">
+                <v-expansion-panel-title>
+                  <v-icon :icon="example.icon" class="mr-2" />
+                  {{ example.title }}
+                </v-expansion-panel-title>
+                <v-expansion-panel-text>
+                  {{ example.content }}
+                </v-expansion-panel-text>
+              </v-expansion-panel>
+            </v-expansion-panels>
+          </v-card-text>
+        </v-card>
+      </v-col>
+
+      <v-col cols="12" md="6">
+        <v-card class="info-card h-100" variant="outlined">
+          <v-card-title class="text-h6">常见问题</v-card-title>
+          <v-card-text>
+            <FaqAccordion :items="faqs" />
+          </v-card-text>
+        </v-card>
+      </v-col>
+    </v-row>
+
+    <v-card class="cta-card mt-10" border>
+      <v-card-text class="d-flex flex-column flex-md-row align-md-center justify-space-between ga-4">
+        <div>
+          <div class="text-h6 font-weight-bold">准备好开始互助了吗？</div>
+          <div class="text-body-2 text-medium-emphasis mt-1">填写委托表后，我们会尽快进入审核流程。</div>
+        </div>
+
+        <div class="d-flex flex-wrap ga-3">
+          <v-btn color="green" size="large" to="/form" prepend-icon="mdi-file-document-edit">
+            填写委托表
+          </v-btn>
+          <v-btn
+            color="green"
+            size="large"
+            variant="outlined"
+            href="https://qun.qq.com/universal-share/share?ac=1&authKey=27wt%2BV3jpF1Sh7iV%2BqrRjjR3M8eK96fKLjw%2BDOfHV0C1n2SVPaEKJOSIRtieebZE&busi_data=eyJncm91cENvZGUiOiI2MDk4MTI2MTMiLCJ0b2tlbiI6Im9PcWFBNEo5QnAyOU9HOG4xL3hFTkVhTS9XYnI5VXF3ZlVsY29RZ3dESWgzVnZNcVVOTkdYbkY4T2gvcVZSdEciLCJ1aW4iOiIxMjgyMTA1Njg1In0=&data=FuH6V8EcXOkJVY-dAHIoXKAFvHE9yyYjgW-wn6_vwNtuz0sxmTcdy0lcyonXMfN_3yiDGhtzT1eHvpDacmfycv37MU1w-qtGl-4vrwHwR_s&svctype=5&tempid=h5_group_info"
+            target="_blank"
+            prepend-icon="mdi-account-group"
+          >
+            加入审核组
+          </v-btn>
+          <v-btn variant="text" size="large" to="/faq" prepend-icon="mdi-help-circle">
+            查看更多问题
+          </v-btn>
+        </div>
       </v-card-text>
     </v-card>
-
-    <v-card variant="outlined" class="mb-8">
-      <v-card-title class="text-h5">常见问题</v-card-title>
-      <v-card-text>
-        <v-expansion-panels>
-          <v-expansion-panel v-for="(faq, index) in faqs" :key="index">
-            <v-expansion-panel-title>{{ faq.question }}</v-expansion-panel-title>
-            <v-expansion-panel-text>{{ faq.answer }}</v-expansion-panel-text>
-          </v-expansion-panel>
-        </v-expansion-panels>
-      </v-card-text>
-    </v-card>
-
-    <div class="text-center">
-      <v-btn color="green" size="large" to="/form" prepend-icon="mdi-file-document-edit">
-        填写委托表
-      </v-btn>
-      <v-btn
-        color="green"
-        size="large"
-        variant="outlined"
-        href="https://qun.qq.com/universal-share/share?ac=1&authKey=27wt%2BV3jpF1Sh7iV%2BqrRjjR3M8eK96fKLjw%2BDOfHV0C1n2SVPaEKJOSIRtieebZE&busi_data=eyJncm91cENvZGUiOiI2MDk4MTI2MTMiLCJ0b2tlbiI6Im9PcWFBNEo5QnAyOU9HOG4xL3hFTkVhTS9XYnI5VXF3ZlVsY29RZ3dESWgzVnZNcVVOTkdYbkY4T2gvcVZSdEciLCJ1aW4iOiIxMjgyMTA1Njg1In0=&data=FuH6V8EcXOkJVY-dAHIoXKAFvHE9yyYjgW-wn6_vwNtuz0sxmTcdy0lcyonXMfN_3yiDGhtzT1eHvpDacmfycv37MU1w-qtGl-4vrwHwR_s&svctype=5&tempid=h5_group_info"
-        target="_blank"
-        prepend-icon="mdi-account-group"
-        class="ml-4"
-      >
-        加入审核组
-      </v-btn>
-      <v-btn variant="text" size="large" to="/faq" prepend-icon="mdi-help-circle" class="ml-4">
-        查看更多问题
-      </v-btn>
-    </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import { useHead } from '@unhead/vue';
+import type { IProcessStep } from '@/interfaces/IProcessStep';
 
 useHead({
   title: '互助流程 - DCR 学生互助频道',
@@ -115,7 +91,7 @@ useHead({
   ]
 });
 
-const steps = [
+const steps: IProcessStep[] = [
   {
     title: '填写委托表',
     icon: 'mdi-file-document-edit',
@@ -136,11 +112,7 @@ const steps = [
     icon: 'mdi-check-circle',
     color: 'teal',
     description: '我们会对您的申请进行审核，确保信息真实有效。审核通常在 1-3 个工作日内完成。',
-    details: [
-      { icon: 'mdi-account-check', text: '核实基本信息' },
-      { icon: 'mdi-file-check', text: '评估互助需求' },
-      { icon: 'mdi-email', text: '审核结果将通过邮件通知' }
-    ]
+
   },
   {
     title: '考核',
@@ -164,11 +136,6 @@ const steps = [
     color: 'green-darken-1',
     description:
       '恭喜！您已成功加入 DCR 学生互助频道。现在您可以获得互助服务，也可以帮助其他学生。',
-    details: [
-      { icon: 'mdi-hand-heart', text: '获得互助服务' },
-      { icon: 'mdi-share-variant', text: '分享经验和建议' },
-      { icon: 'mdi-heart', text: '参与心理支持活动' }
-    ]
   }
 ];
 
@@ -217,8 +184,38 @@ const faqs = [
 <style scoped>
 .content {
   padding-top: 80px;
-  padding-bottom: 42px;
+  padding-bottom: 56px;
   max-width: 1200px;
   margin: 0 auto;
+}
+
+.page-shell {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.process-timeline {
+  margin-bottom: 16px;
+}
+
+.info-card {
+  border-radius: 16px;
+}
+
+.cta-card {
+  border-radius: 18px;
+  background: linear-gradient(
+    135deg,
+    rgba(var(--v-theme-primary), 0.08),
+    rgba(var(--v-theme-surface), 0.95)
+  );
+}
+
+@media (max-width: 960px) {
+  .content {
+    padding-top: 72px;
+    padding-bottom: 42px;
+  }
 }
 </style>

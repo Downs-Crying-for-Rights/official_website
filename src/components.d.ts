@@ -9,7 +9,10 @@ declare module 'vue' {
   export interface GlobalComponents {
     AppFooter: typeof import('./components/AppFooter.vue')['default']
     AppTopBar: typeof import('./components/AppTopBar.vue')['default']
+    FaqAccordion: typeof import('./components/FaqAccordion.vue')['default']
     FeatureCard: typeof import('./components/FeatureCard.vue')['default']
+    PageHero: typeof import('./components/PageHero.vue')['default']
+    ProcessTimelineStep: typeof import('./components/ProcessTimelineStep.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     ServiceCard: typeof import('./components/ServiceCard.vue')['default']

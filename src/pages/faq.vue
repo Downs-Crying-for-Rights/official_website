@@ -4,7 +4,7 @@
 
     <v-alert type="info" variant="tonal" class="mb-8">
       <v-alert-title>找不到答案？</v-alert-title>
-      如果以下内容没有解答您的疑问，欢迎通过邮件或反馈表联系我们。
+      如果以下内容没有解答您的疑问，欢迎在群里问我们。
     </v-alert>
 
     <v-card class="mb-8">

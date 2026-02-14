@@ -97,17 +97,15 @@
     </h2>
     <div class="d-flex flex-1-1 align-content-center margin-x flex-wrap ga-8">
       <div class="d-flex flex-column ga-4 flex-grow-1 flex-wrap" style="flex-basis: 375px">
-        <h3 class="text-h5">简单四步，加入互助</h3>
-        <p>我们为您提供清晰的互助流程，让您轻松参与到学生互助中来。</p>
+        <h3 class="text-h5">简单四步，<br/>加入互助！</h3>
         <div class="d-flex flex-column ga-4">
           <v-card
             v-for="(step, index) in processSteps"
             :key="step.title"
-            variant="flat"
-            :prepend-icon="step.icon"
+border hover            :prepend-icon="step.icon"
             class="flex-grow-1"
           >
-            <v-card-title>步骤 {{ index + 1 }}: {{ step.title }}</v-card-title>
+            <v-card-title>{{ step.title }}</v-card-title>
             <v-card-text>{{ step.description }}</v-card-text>
           </v-card>
         </div>
@@ -186,8 +184,7 @@
         <v-card
           v-for="future in futureFeatures"
           :key="future.title"
-          variant="outlined"
-          class="feature-card-small"
+border hover          class="feature-card-small"
         >
           <v-card-item>
             <v-icon :icon="future.icon" />
@@ -201,22 +198,21 @@
 
   <v-sheet class="content">
     <h2 class="headline-feature text-center">
-      <span
+
+      <span>让学生开心的礼物 </span> <span
         class="gradient-base"
         style="background-image: linear-gradient(135deg, #2e7d32, #388e3c)"
-        >真实</span
+        >开了又开</span
       >
-      <span>的用户反馈</span>
     </h2>
 
     <div class="margin-x">
-      <p class="text-center mb-8">来自使用过我们服务的学生的真实评价</p>
+      <p class="text-center mb-8">听听他们怎么说</p>
       <div class="d-flex flex-wrap ga-4">
         <v-card
           v-for="review in userReviews"
           :key="review.content"
-          variant="tonal"
-          class="flex-grow-1"
+border hover          class="flex-grow-1"
           style="flex-basis: 300px"
         >
           <v-card-text>
@@ -224,66 +220,13 @@
             <p>{{ review.content }}</p>
             <v-icon icon="mdi-format-quote-close" class="mt-2" />
           </v-card-text>
-          <v-card-actions>
-            <v-rating
-              :model-value="review.rating"
-              readonly
-              density="compact"
-              color="yellow-darken-2"
-            />
-          </v-card-actions>
+          <v-card-subtitle class="text-right">- {{ review.username }}</v-card-subtitle>
         </v-card>
       </div>
     </div>
   </v-sheet>
 
-  <div class="content">
-    <h2 class="headline-feature text-center">
-      <span
-        class="gradient-base"
-        style="background-image: linear-gradient(135deg, #2e7d32, #43a047)"
-        >友情</span
-      >
-      <span>链接</span>
-    </h2>
 
-    <div class="margin-x">
-
-
-      <!-- 友情链接 -->
-      <div>
-
-        <div class="d-flex flex-wrap ga-4 justify-center">
-          <v-card
-            v-for="link in friendlyLinks"
-            :key="link.name"
-            variant="outlined"
-            class="friendly-link-card"
-            :href="link.url"
-            target="_blank"
-          >
-            <v-card-item>
-              <div class="d-flex align-center ga-3">
-                <v-avatar size="48" rounded="lg" color="grey-lighten-3" v-if="link.icon">
-                  <span class="text-h6">{{ link.icon }}</span>
-                </v-avatar>
-                <div>
-                  <v-card-title class="text-body-1">{{ link.name }}</v-card-title>
-                  <v-card-subtitle class="text-caption">{{ link.category }}</v-card-subtitle>
-                </div>
-              </div>
-            </v-card-item>
-            <v-card-text class="text-body-2">
-              {{ link.description }}
-            </v-card-text>
-          </v-card>
-        </div>
-        <p class="text-center mt-6 text-caption text-grey">
-          上述项目与 DCR 无直接关系。
-        </p>
-      </div>
-    </div>
-  </div>
 
   <div class="content">
     <div class="margin-x d-flex flex-column ga-8 align-center">
@@ -314,6 +257,44 @@
           查看完整免责声明
         </v-btn>
       </v-alert>
+    </div>
+  </div>
+
+   <div class="content">
+    <h2 class="headline-feature text-center">
+      <span>友情链接</span>
+    </h2>
+
+    <div>
+      <!-- 友情链接 -->
+      <div>
+        <div class="d-flex flex-wrap ga-4 justify-center">
+          <v-card
+            v-for="link in friendlyLinks"
+            :key="link.name"
+            border hover
+            class="friendly-link-card"
+            :href="link.url"
+            target="_blank"
+          >
+            <v-card-item>
+              <div class="d-flex align-center ga-3">
+                <v-avatar size="48" rounded="lg" color="grey-lighten-3" v-if="link.icon">
+                  <span class="text-h6">{{ link.icon }}</span>
+                </v-avatar>
+                <div>
+                  <v-card-title class="text-body-1">{{ link.name }}</v-card-title>
+                  <v-card-subtitle class="text-caption">{{ link.category }}</v-card-subtitle>
+                </div>
+              </div>
+            </v-card-item>
+            <v-card-text class="text-body-2">
+              {{ link.description }}
+            </v-card-text>
+          </v-card>
+        </div>
+        <p class="text-center mt-6 text-caption text-grey">上述项目与 DCR 无直接关系。</p>
+      </div>
     </div>
   </div>
 </template>
@@ -613,15 +594,21 @@ const futureFeatures = [
 
 const userReviews = [
   {
-    content: '非常感谢DCR提供的帮助，让我能够勇敢地反映问题。',
+    content: '今下午成功回家了，虽然还是补了10天',
+    username: '云**雪',
     rating: 5
   },
   {
-    content: '平台很专业，流程清晰，工作人员态度很好。',
+    content: '我成功了！感谢各位的帮助',
+    username: '梦**伤',
+
     rating: 5
   },
   {
-    content: '终于找到了一个可以信赖的互助平台，真的很温暖。',
+    content: '笑不活了 xx市高中强制补课 被学生与家长联合 来人下来检查了 我们成功了',
+
+    username: '淋*季',
+
     rating: 5
   }
 ];
@@ -630,14 +617,16 @@ const friendlyLinks = [
   {
     name: '智教联盟',
     category: 'SmartTeachCN',
-    description: '天津静海汇智单创文化发展有限公司下属的独立公益性组织，致力于为教学辅助类应用提供全方面扶持与帮助，为全国最大的电教委在线交流平台。',
+    description:
+      '天津静海汇智单创文化发展有限公司下属的独立公益性组织，致力于为教学辅助类应用提供全方面扶持与帮助，为全国最大的电教委在线交流平台。',
     url: 'https://forum.smart-teach.cn/'
   },
   {
     name: 'ClassIsland',
     icon: 'CI',
     category: '课表显示工具',
-    description: '适用于班级多媒体屏幕的课表信息显示工具，可在 Windows PC、Mac 及 Linux 设备上显示各种信息',
+    description:
+      '适用于班级多媒体屏幕的课表信息显示工具，可在 Windows PC、Mac 及 Linux 设备上显示各种信息',
     url: 'https://www.classisland.tech/'
   },
   {

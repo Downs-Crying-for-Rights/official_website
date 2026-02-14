@@ -398,7 +398,7 @@
           <v-divider class="my-4" />
 
           <!-- 评分和反馈 -->
-          <div class="feedback-section">
+          <div class="feedback-section" v-if="false">
             <h3 class="text-h6 mb-4">请为我们的生成器评分（非必填）</h3>
 
             <div class="mb-4">
@@ -682,6 +682,17 @@ const resetForm = () => {
 </script>
 
 <style scoped>
+:root {
+  --template-bg: #f5f5f5;
+  --template-bg-dark: #2a2a2a;
+  --template-text-bg: #ffffff;
+  --template-text-bg-dark: #1e1e1e;
+  --border-color: #4caf50;
+  --border-color-dark: #66bb6a;
+  --feedback-bg: #f9f9f9;
+  --feedback-bg-dark: #262626;
+}
+
 .content {
   padding-top: 80px;
   padding-bottom: 42px;
@@ -690,17 +701,28 @@ const resetForm = () => {
 }
 
 .template-examples {
-  background-color: #f5f5f5;
+  background-color: var(--template-bg);
   padding: 16px;
   border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+:dark .template-examples {
+  background-color: var(--template-bg-dark);
 }
 
 .template-text {
   font-family: monospace;
-  background-color: #fff;
+  background-color: var(--template-text-bg);
   padding: 8px;
-  border-left: 3px solid #4caf50;
+  border-left: 3px solid var(--border-color);
   margin-left: 16px;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+:dark .template-text {
+  background-color: var(--template-text-bg-dark);
+  border-left-color: var(--border-color-dark);
 }
 
 .generated-content {
@@ -709,24 +731,34 @@ const resetForm = () => {
   font-family: monospace;
   font-size: 14px;
   line-height: 1.6;
-  background-color: #f5f5f5;
+  background-color: var(--template-bg);
   padding: 16px;
   border-radius: 4px;
   max-height: 400px;
   overflow-y: auto;
+  transition: background-color 0.2s;
+}
+
+:dark .generated-content {
+  background-color: var(--template-bg-dark);
 }
 
 .feedback-section {
-  background-color: #f9f9f9;
+  background-color: var(--feedback-bg);
   padding: 16px;
   border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+:dark .feedback-section {
+  background-color: var(--feedback-bg-dark);
 }
 
 /* 增强确认复选框的可读性 */
 .confirmation-checkbox :deep(.v-label) {
-  color: rgba(0, 0, 0, 0.87) !important;
   font-weight: 500;
   font-size: 15px;
+  transition: color 0.2s;
 }
 
 .confirmation-checkbox :deep(.v-selection-control) {

@@ -259,4 +259,18 @@ useHead({
   max-width: 1000px;
   margin: 0 auto;
 }
+
+/* 卡片过渡效果 */
+:deep(.v-card) {
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+/* 确保文本颜色在深色模式下正确显示 */
+:deep(.v-card-title) {
+  transition: background-color 0.2s, color 0.2s;
+}
+
+:deep(.v-list-item-title) {
+  transition: color 0.2s;
+}
 </style>
