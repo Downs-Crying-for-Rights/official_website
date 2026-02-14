@@ -25,6 +25,8 @@ function getGitTag() {
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  // Use relative asset paths so it works under any subdirectory
+  base: './',
   plugins: [
     VueRouter({
       dts: 'src/typed-router.d.ts'
