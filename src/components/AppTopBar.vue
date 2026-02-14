@@ -32,7 +32,16 @@
     </div>
 
     <template v-slot:append>
-      <div class="ga-4">
+      <div class="d-flex align-center ga-2">
+        <!-- 主题切换按钮 -->
+        <v-btn
+          icon
+          variant="text"
+          @click="toggleTheme"
+          :title="isDark ? '切换到浅色模式' : '切换到深色模式'"
+        >
+          <v-icon>{{ isDark ? 'mdi-weather-sunny' : 'mdi-weather-night' }}</v-icon>
+        </v-btn>
         <v-btn small variant="flat" color="green" to="/form" prepend-icon="mdi-file-document-edit"
           >填写委托表</v-btn
         >
@@ -71,7 +80,52 @@
 </style>
 
 <script setup>
+import { useTheme } from 'vuetify';
+import { ref, computed, onMounted, onUnmounted } from 'vue';
+
 const isNavDrawerOpen = ref(false);
+const theme = useTheme();
+
+// 计算当前是否为深色模式
+const isDark = computed(() => theme.global.current.value.dark);
+
+// 切换主题
+const toggleTheme = () => {
+  const newTheme = isDark.value ? 'light' : 'dark';
+  theme.global.name.value = newTheme;
+  // 保存用户偏好到localStorage
+  localStorage.setItem('theme', newTheme);
+};
+
+// 组件挂载时，检测并应用用户的主题偏好
+onMounted(() => {
+  // 优先使用用户保存的偏好
+  const savedTheme = localStorage.getItem('theme');
+
+  if (savedTheme) {
+    theme.global.name.value = savedTheme;
+  } else {
+    // 如果没有保存的偏好，则检测系统主题
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    theme.global.name.value = prefersDark ? 'dark' : 'light';
+  }
+
+  // 监听系统主题变化（仅当用户没有手动设置偏好时）
+  const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+  const handleThemeChange = (e) => {
+    // 只有在没有用户保存的偏好时才自动切换
+    if (!localStorage.getItem('theme')) {
+      theme.global.name.value = e.matches ? 'dark' : 'light';
+    }
+  };
+
+  mediaQuery.addEventListener('change', handleThemeChange);
+
+  // 组件卸载时清理监听器
+  onUnmounted(() => {
+    mediaQuery.removeEventListener('change', handleThemeChange);
+  });
+});
 
 const navItems = [
   {
