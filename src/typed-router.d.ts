@@ -21,10 +21,11 @@ declare module 'vue-router/auto-routes' {
     '/': RouteRecordInfo<'/', '/', Record<never, never>, Record<never, never>>,
     '/[..path]': RouteRecordInfo<'/[..path]', '/:ath(.*)', { ath: ParamValue<true> }, { ath: ParamValue<false> }>,
     '/404': RouteRecordInfo<'/404', '/404', Record<never, never>, Record<never, never>>,
-    '/download/': RouteRecordInfo<'/download/', '/download', Record<never, never>, Record<never, never>>,
-    '/download/thank_you/[indexId]/[version]/[appSubChannel]/': RouteRecordInfo<'/download/thank_you/[indexId]/[version]/[appSubChannel]/', '/download/thank_you/:indexId/:version/:appSubChannel', { indexId: ParamValue<true>, version: ParamValue<true>, appSubChannel: ParamValue<true> }, { indexId: ParamValue<false>, version: ParamValue<false>, appSubChannel: ParamValue<false> }>,
-    '/download/thank_you/v2/[version]/[appSubChannel]/': RouteRecordInfo<'/download/thank_you/v2/[version]/[appSubChannel]/', '/download/thank_you/v2/:version/:appSubChannel', { version: ParamValue<true>, appSubChannel: ParamValue<true> }, { version: ParamValue<false>, appSubChannel: ParamValue<false> }>,
-    '/download/v1/': RouteRecordInfo<'/download/v1/', '/download/v1', Record<never, never>, Record<never, never>>,
-    '/download/v2/': RouteRecordInfo<'/download/v2/', '/download/v2', Record<never, never>, Record<never, never>>,
+    '/about': RouteRecordInfo<'/about', '/about', Record<never, never>, Record<never, never>>,
+    '/disclaimer': RouteRecordInfo<'/disclaimer', '/disclaimer', Record<never, never>, Record<never, never>>,
+    '/faq': RouteRecordInfo<'/faq', '/faq', Record<never, never>, Record<never, never>>,
+    '/form': RouteRecordInfo<'/form', '/form', Record<never, never>, Record<never, never>>,
+    '/process': RouteRecordInfo<'/process', '/process', Record<never, never>, Record<never, never>>,
+    '/support': RouteRecordInfo<'/support', '/support', Record<never, never>, Record<never, never>>,
   }
 }

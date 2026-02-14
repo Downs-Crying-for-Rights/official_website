@@ -2,27 +2,19 @@
   <v-footer height="auto" app class="d-flex flex-wrap ga-4 px-4">
     <div class="text-caption text-disabled" style="">
       &copy; 2023-{{ new Date().getFullYear() }}
-      <span class="">ClassIsland</span>
+      <span class="">DCR 学生互助频道</span>
     </div>
     <div class="text-caption text-disabled" style="">
-      Build_{{ gitTag }}
+      DCR 是该频道的代号，其内容并不代表任何法人实体
     </div>
+    <a href="/disclaimer" class="text-caption text-disabled"> 免责声明 </a>
     <a
-      href="https://beian.miit.gov.cn/"
+      href="https://cloud.dcr.smart-teach.cn"
       target="_blank"
       rel="noopener noreferrer"
       class="text-caption text-disabled"
     >
-      津ICP备2025035356号
-    </a>
-
-    <a
-      href="https://status.classisland.tech/"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="text-caption text-disabled"
-    >
-      服务状态
+      文档下载站
     </a>
 
     <div class="d-flex flex-row-reverse flex-grow-1">
@@ -46,23 +38,17 @@ import SvgIcon from './SvgIcon.vue';
 
 const items = [
   {
-    title: 'QQ群',
-    icon: 'mdi-qqchat',
-    href: 'https://qm.qq.com/q/4NsDQKiAuQ'
+    title: '联系我们',
+    icon: 'mdi-email-outline',
+    href: 'mailto:contact@xshzpd.mysxl.cn'
   },
   {
-    title: 'GitHub',
-    icon: `mdi-github`,
-    href: 'https://github.com/ClassIsland/ClassIsland'
-  },
-  {
-    title: '电子邮件',
-    icon: `mdi-email-outline`,
-    href: 'mailto:wrc@classisland.tech'
+    title: '反馈表',
+    icon: `mdi-message-text-outline`,
+    href: '#'
   }
 ];
 const gitTag = __GIT_TAG__;
-
 </script>
 
 <style scoped lang="sass">
@@ -73,5 +59,5 @@ const gitTag = __GIT_TAG__;
   transition: .2s ease-in-out
 
   &:hover
-    color: rgba(25, 118, 210, 1)
+    color: rgba(76, 175, 80, 1)
 </style>

@@ -9,13 +9,10 @@ declare module 'vue' {
   export interface GlobalComponents {
     AppFooter: typeof import('./components/AppFooter.vue')['default']
     AppTopBar: typeof import('./components/AppTopBar.vue')['default']
-    DownloadDialog: typeof import('./components/DownloadDialog.vue')['default']
-    DownloadPlatformCard: typeof import('./components/DownloadPlatformCard.vue')['default']
     FeatureCard: typeof import('./components/FeatureCard.vue')['default']
-    PluginCard: typeof import('./components/PluginCard.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    SplitDownloadButton: typeof import('./components/SplitDownloadButton.vue')['default']
+    ServiceCard: typeof import('./components/ServiceCard.vue')['default']
     SvgIcon: typeof import('./components/SvgIcon.vue')['default']
   }
 }

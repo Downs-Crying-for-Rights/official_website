@@ -18,7 +18,21 @@ import { createVuetify } from 'vuetify';
 // 创建并配置Vuetify实例
 export default createVuetify({
   theme: {
-    // 设置默认主题为暗黑模式
-    defaultTheme: 'dark'
+    defaultTheme: 'light',
+    themes: {
+      light: {
+        colors: {
+          primary: '#2E7D32', // 深绿色
+          secondary: '#388E3C', // 中绿色
+          accent: '#43A047', // 鲜绿色
+          success: '#2E7D32',
+          info: '#00796B', // 深青色
+          warning: '#F57C00', // 深橙色
+          error: '#EF5350',
+          background: '#FAFAFA', // 浅灰背景
+          surface: '#FFFFFF'
+        }
+      }
+    }
   }
 });
