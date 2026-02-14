@@ -6,19 +6,19 @@
 
 ### 环境要求
 
-- **Node.js**：建议使用 Node.js 20 及以上版本。可使用 [nvm](https://github.com/nvm-sh/nvm) 管理版本。
-- **Yarn**：本项目使用 Yarn 管理依赖。
+- **Node.js**：建议使用 Node.js 24 及以上版本。可使用 [nvm](https://github.com/nvm-sh/nvm) 管理版本。
+- **pnpm**：本项目使用 pnpm 管理依赖。
 
 ### 安装依赖
 
 ```sh
-yarn install
+pnpm install
 ```
 
 运行开发服务器：
 
 ```sh
-yarn dev
+pnpm run dev
 ```
 
 在浏览器中打开控制台给出的本地地址即可预览开发中的网站。
@@ -26,7 +26,7 @@ yarn dev
 ### 构建生产版本
 
 ```sh
-yarn build
+pnpm run build
 ```
 
 构建产物位于 `dist/` 目录，适合部署到生产环境。
@@ -38,7 +38,7 @@ yarn build
 提交前请运行：
 
 ```sh
-yarn format
+pnpm run format
 ```
 
 ## 许可证
