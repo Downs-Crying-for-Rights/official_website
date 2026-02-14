@@ -32,6 +32,19 @@ export default createVuetify({
           background: '#FAFAFA', // 浅灰背景
           surface: '#FFFFFF'
         }
+      },
+      dark: {
+        colors: {
+          primary: '#4CAF50', // 亮绿色
+          secondary: '#66BB6A', // 中绿色
+          accent: '#81C784', // 浅绿色
+          success: '#4CAF50',
+          info: '#26A69A', // 青色
+          warning: '#FFA726', // 橙色
+          error: '#EF5350',
+          background: '#121212', // 深色背景
+          surface: '#1E1E1E'
+        }
       }
     }
   }

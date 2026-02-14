@@ -51,7 +51,7 @@
     <h2 class="headline-feature text-center">
       <span
         class="gradient-base"
-        style="background-image: linear-gradient(135deg, #2e7d32, #43a047)"
+        style="background-image: linear-gradient(135deg, #e53935, #ef5350)"
         >温暖</span
       >
       <span>的互助平台</span>
@@ -90,7 +90,7 @@
     <h2 class="headline-feature text-center">
       <span
         class="gradient-base"
-        style="background-image: linear-gradient(135deg, #388e3c, #4caf50)"
+        style="background-image: linear-gradient(135deg, #1976d2, #42a5f5)"
         >专业</span
       >
       <span>的互助流程</span>
@@ -242,61 +242,17 @@
       <span
         class="gradient-base"
         style="background-image: linear-gradient(135deg, #2e7d32, #43a047)"
-        >合作</span
+        >友情</span
       >
-      <span>伙伴与友情链接</span>
+      <span>链接</span>
     </h2>
 
     <div class="margin-x">
-      <!-- 合作伙伴 -->
-      <div class="mb-12">
-        <h3 class="text-h5 text-center mb-4">合作伙伴</h3>
-        <p class="text-center mb-6 text-body-2">感谢智教联盟的大力支持</p>
-        
-        <v-card variant="outlined" color="green" class="partner-card-large mx-auto mb-6">
-          <v-card-item class="pa-6">
-            <div class="d-flex align-center ga-6 mb-4">
-              <!-- <v-avatar size="100" rounded="lg">
-                <v-img src="/partner-logo.png" alt="智教联盟 Logo" />
-              </v-avatar> -->
-              <div class="flex-grow-1">
-                <v-card-title class="text-h5 mb-2">智教联盟 (SmartTeachCN)</v-card-title>
-                <v-card-subtitle class="text-wrap text-body-2">
-                  天津静海汇智单创文化发展有限公司下属的独立公益性组织，致力于为教学辅助类应用提供全方面扶持与帮助，为全国最大的电教委在线交流平台。
-                </v-card-subtitle>
-              </div>
-            </div>
-          </v-card-item>
-          
-          <!-- 大图展示 -->
-          <!-- <v-card-text class="pa-0">
-            <v-img
-              src="/partners-full.png"
-              alt="智教联盟合作项目"
-              class="partners-full-image"
-              cover
-            />
-          </v-card-text> -->
-          
-          <v-card-actions class="pa-4">
-            <v-btn
-              color="green"
-              variant="outlined"
-              href="https://forum.smart-teach.cn/"
-              target="_blank"
-              prepend-icon="mdi-open-in-new"
-              size="large"
-            >
-              访问智教联盟官网
-            </v-btn>
-          </v-card-actions>
-        </v-card>
-      </div>
+
 
       <!-- 友情链接 -->
       <div>
-        <h3 class="text-h5 text-center mb-4">友情链接</h3>
-        <p class="text-center mb-6 text-body-2">近似领域优秀产品推荐</p>
+
         <div class="d-flex flex-wrap ga-4 justify-center">
           <v-card
             v-for="link in friendlyLinks"
@@ -308,7 +264,7 @@
           >
             <v-card-item>
               <div class="d-flex align-center ga-3">
-                <v-avatar size="48" rounded="lg" color="grey-lighten-3">
+                <v-avatar size="48" rounded="lg" color="grey-lighten-3" v-if="link.icon">
                   <span class="text-h6">{{ link.icon }}</span>
                 </v-avatar>
                 <div>
@@ -323,7 +279,7 @@
           </v-card>
         </div>
         <p class="text-center mt-6 text-caption text-grey">
-          以上项目为 DCR 认可的优秀产品，与 DCR 无直接合作关系
+          上述项目与 DCR 无直接关系。
         </p>
       </div>
     </div>
@@ -671,6 +627,12 @@ const userReviews = [
 ];
 
 const friendlyLinks = [
+  {
+    name: '智教联盟',
+    category: 'SmartTeachCN',
+    description: '天津静海汇智单创文化发展有限公司下属的独立公益性组织，致力于为教学辅助类应用提供全方面扶持与帮助，为全国最大的电教委在线交流平台。',
+    url: 'https://forum.smart-teach.cn/'
+  },
   {
     name: 'ClassIsland',
     icon: 'CI',
