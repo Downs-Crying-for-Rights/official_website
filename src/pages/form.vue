@@ -520,9 +520,9 @@ const getSchoolTypes = (category: string) => {
 };
 
 const rules = {
-  required: (v: any) => !!v || '此项为必填项',
-  minLength: (v: string) => (v && v.length >= 20) || '请至少输入20个字符',
-  mustCheckAll: (v: any) => formData.value.confirmations.length === 3 || '请勾选所有确认项'
+  required: () => (v: any) => !!v || '此项为必填项',
+  minLength: () => (v: string) => (v && v.length >= 20) || '请至少输入20个字符',
+  mustCheckAll: () => formData.value.confirmations.length === 3 || '请勾选所有确认项'
 };
 
 const canSubmit = computed(() => {
@@ -566,7 +566,7 @@ const autoLocate = () => {
           `定位成功！纬度: ${position.coords.latitude}, 经度: ${position.coords.longitude}\n请手动填写详细地址`
         );
       },
-      (error) => {
+      () => {
         alert('定位失败，请手动填写地址');
       }
     );

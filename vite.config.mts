@@ -104,10 +104,4 @@ export default defineConfig({
   ssr: {
     noExternal: ['vuetify']
   },
-  ssgOptions: {
-    includedRoutes(paths, routes) {
-      paths.push('/download/thank_you/_/_/_/');
-      return paths.filter((i) => !i.includes(':') || i === '/download/thank_you');
-    }
-  }
 });

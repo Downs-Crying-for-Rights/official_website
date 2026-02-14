@@ -18,7 +18,6 @@ import 'virtual:svg-icons-register';
 import './styles/main.scss';
 import { ViteSSG } from 'vite-ssg';
 import { routes } from 'vue-router/auto-routes';
-import * as Sentry from '@sentry/vue';
 import chalk from 'chalk';
 
 const asciiLogo =
@@ -35,11 +34,12 @@ const asciiLogo =
 export const createApp = ViteSSG(
   App,
   { routes },
-  ({ app, router, routes, isClient, initialState }) => {
+  ({ app, isClient }) => {
     // 在这里使用例如 app.use(pinia) 或者 router.use()
     registerPlugins(app);
     if (isClient) {
       // Sentry 已禁用 - 如需启用请配置 DSN
+      // import * as Sentry from '@sentry/vue';
       // Sentry.init({
       //   app,
       //   dsn: "YOUR_DSN_HERE",

@@ -34,8 +34,6 @@
 </template>
 
 <script setup lang="ts">
-import SvgIcon from './SvgIcon.vue';
-
 const items = [
   {
     title: '联系我们',
@@ -48,7 +46,6 @@ const items = [
     href: '#'
   }
 ];
-const gitTag = __GIT_TAG__;
 </script>
 
 <style scoped lang="sass">

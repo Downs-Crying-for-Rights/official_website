@@ -100,7 +100,7 @@
         <h3 class="text-h5">简单四步，<br/>加入互助！</h3>
         <div class="d-flex flex-column ga-4">
           <v-card
-            v-for="(step, index) in processSteps"
+            v-for="step in processSteps"
             :key="step.title"
 border hover            :prepend-icon="step.icon"
             class="flex-grow-1"
