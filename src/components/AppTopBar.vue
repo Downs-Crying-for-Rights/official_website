@@ -42,7 +42,7 @@
         >
           <v-icon>{{ isDark ? 'mdi-weather-sunny' : 'mdi-weather-night' }}</v-icon>
         </v-btn>
-        <v-btn small variant="flat" color="green" to="/form" prepend-icon="mdi-file-document-edit"
+        <v-btn small variant="flat" color="green" href="https://1kxfhpte.jsjform.com/f/TMcGoz" target="_blank" prepend-icon="mdi-file-document-edit"
           >填写委托表</v-btn
         >
       </div>
@@ -146,7 +146,7 @@ const navItems = [
   {
     icon: 'mdi-file-document-edit',
     title: '委托表工具',
-    to: '/form'
+    href: 'https://1kxfhpte.jsjform.com/f/TMcGoz'
   },
   {
     icon: 'mdi-download',

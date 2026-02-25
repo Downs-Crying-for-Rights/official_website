@@ -114,8 +114,7 @@
       <v-card-text>
         <p class="mb-4 text-high-emphasis">如果以上内容没有解答您的疑问，您可以：</p>
         <div class="d-flex flex-wrap ga-4">
-          <v-btn color="green" prepend-icon="mdi-email"> 发送邮件 </v-btn>
-          <v-btn color="green" variant="outlined" prepend-icon="mdi-message-text">
+          <v-btn color="green" href="https://1kxfhpte.jsjform.com/f/TMcGoz" target="_blank" prepend-icon="mdi-message-text">
             填写反馈表
           </v-btn>
           <v-btn
@@ -155,7 +154,7 @@ const platformFaqs = [
   {
     question: '平台收费吗？',
     answer:
-      '<strong>收费不存在！</strong>我们承诺永久免费提供所有服务。任何以 DCR 名义收费的行为都是欺诈，请立即举报。'
+      '<strong>不收费！</strong>我们承诺永久免费提供所有服务。任何以 DCR 名义收费的行为都是欺诈，请立即<a href="https://1kxfhpte.jsjform.com/f/TMcGoz" target="_blank">填写反馈表</a>举报。'
   },
   {
     question: 'DCR 是一个组织吗？',
@@ -170,7 +169,7 @@ const platformFaqs = [
   {
     question: '平台提供哪些服务？',
     answer:
-      '我们提供：<ul class="ml-6 mt-2"><li>委托表生成器</li><li>AI 智能助手（即将上线）</li><li>互助教程与文档下载</li><li>心理支持服务</li><li>经验分享与交流</li></ul>'
+      '我们提供：<ul class="ml-6 mt-2"><li>委托表生成器</li><li>互助教程与文档下载</li><li>心理支持服务</li><li>经验分享与交流</li></ul>'
   }
 ];
 
@@ -183,7 +182,7 @@ const reportBasicsFaqs = [
   {
     question: '举报需要准备什么材料？',
     answer:
-      '建议准备以下材料：<ul class="ml-6 mt-2"><li>补课通知或要求的截图/照片</li><li>补课时间、地点的记录</li><li>收费凭证（如有）</li><li>其他相关证据</li></ul>材料越详细，举报成功率越高。'
+      '建议准备以下材料：<ul class="ml-6 mt-2"><li>补课通知或要求的截图/照片</li><li>补课时间、地点的记录</li><li>收费凭证（如有）</li><li>其他相关证据</li></ul>原则上材料越详细，举报成功率越高。'
   },
   {
     question: '举报会被发现吗？',
@@ -207,11 +206,6 @@ const reportChannelsFaqs = [
     question: '网络举报和电话举报哪个更好？',
     answer:
       '各有优势：<ul class="ml-6 mt-2"><li><strong>网络举报</strong>：可以上传证据材料，有记录可查，更正式</li><li><strong>电话举报</strong>：更快捷，可以直接沟通，但需要做好记录</li></ul>建议优先选择网络举报，并保留好举报记录。'
-  },
-  {
-    question: '举报后多久会有回复？',
-    answer:
-      '根据《信访条例》，一般情况下：<ul class="ml-6 mt-2"><li>受理通知：3-5 个工作日</li><li>调查处理：15-30 个工作日</li><li>复杂情况可能需要更长时间</li></ul>如果长时间没有回复，可以进行催办或向上级部门反映。'
   }
 ];
 
@@ -222,7 +216,7 @@ const formFaqs = [
   },
   {
     question: '委托表可以修改吗？',
-    answer: '提交前可以随时修改。提交后如需修改，请通过邮件联系我们，说明需要修改的内容。'
+    answer: '提交前可以随时修改。提交后如需修改，使用<a href="https://1kxfhpte.jsjform.com/f/TMcGoz" target="_blank">委托表生成器</a>重新生成后交给 bot 审核即可。'
   },
   {
     question: '必须使用真实姓名吗？',
@@ -247,7 +241,7 @@ const privacyFaqs = [
   },
   {
     question: '可以删除我的信息吗？',
-    answer: '可以。您有权随时要求查看、修改或删除您的个人信息。请通过邮件联系我们提出申请。'
+    answer: '可以。您有权随时要求查看、修改或删除您的个人信息。请通过<a href="https://1kxfhpte.jsjform.com/f/TMcGoz" target="_blank">反馈表</a>联系我们提出申请。'
   }
 ];
 
@@ -258,12 +252,12 @@ const otherFaqs = [
   },
   {
     question: '可以退出吗？',
-    answer: '可以随时退出。如需退出，请通过邮件联系我们，我们会删除您的相关信息。'
+    answer: '可以随时退出。如需退出，请通过<a href="https://1kxfhpte.jsjform.com/f/TMcGoz" target="_blank">反馈表</a>联系我们，我们会删除您的相关信息。'
   },
   {
     question: '如何联系平台？',
     answer:
-      '您可以通过以下方式联系我们：<ul class="ml-6 mt-2"><li>邮箱：contact@xshzpd.mysxl.cn</li><li>反馈表：在网站底部找到反馈表链接</li><li>文档站：https://cloud.dcr.smart-teach.cn</li></ul>'
+      '您可以通过以下方式联系我们：<ul class="ml-6 mt-2"><li><a href="https://1kxfhpte.jsjform.com/f/TMcGoz" target="_blank">反馈表</a></li><li>文档站：<a href="https://cloud.dcr.smart-teach.cn" target="_blank">https://cloud.dcr.smart-teach.cn</a></li></ul>'
   },
   {
     question: '平台会一直运营下去吗？',

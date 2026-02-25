@@ -21,7 +21,7 @@
           <span>的学生互助社区</span>
         </div>
         <div class="d-flex ga-4 flex-wrap mt-8">
-          <v-btn to="/form" color="green" prepend-icon="mdi-file-document-edit" size="large"
+          <v-btn href="https://1kxfhpte.jsjform.com/f/TMcGoz" target="_blank" color="green" prepend-icon="mdi-file-document-edit" size="large"
             >填写委托表</v-btn
           >
           <v-btn
@@ -136,7 +136,7 @@ border hover            :prepend-icon="step.icon"
       <div class="flex-grow-1" style="flex-basis: 375px">
         <h3 class="text-h5 mb-4">委托表生成器</h3>
         <p class="mb-4">在线填写委托表，快速生成规范的互助申请表格，简化您的操作流程。</p>
-        <v-btn color="green" to="/form" prepend-icon="mdi-file-document-edit"> 立即填写 </v-btn>
+        <v-btn color="green" href="https://1kxfhpte.jsjform.com/f/TMcGoz" target="_blank" prepend-icon="mdi-file-document-edit"> 立即填写 </v-btn>
       </div>
       <div class="flex-grow-1" style="flex-basis: 375px">
         <h3 class="text-h5 mb-4">AI 智能助手</h3>
@@ -232,7 +232,7 @@ border hover          class="flex-grow-1"
     <div class="margin-x d-flex flex-column ga-8 align-center">
       <span class="text-h5">准备好开始互助了吗？</span>
       <div class="d-flex flex-row ga-2 flex-wrap justify-center">
-        <v-btn flat color="green" prepend-icon="mdi-file-document-edit" to="/form" size="large">
+        <v-btn flat color="green" prepend-icon="mdi-file-document-edit" href="https://1kxfhpte.jsjform.com/f/TMcGoz" target="_blank" size="large">
           填写委托表
         </v-btn>
         <v-btn

@@ -47,7 +47,7 @@
       </v-card-text>
     </v-card>
 
-    <v-card class="mb-8" variant="tonal" color="green-lighten-5">
+    <v-card class="mb-8" variant="tonal" color="green">
       <v-card-title class="text-h5">常见心理困扰</v-card-title>
       <v-card-text>
         <v-expansion-panels>
@@ -97,7 +97,7 @@
       </ul>
     </v-alert>
 
-    <v-card variant="tonal" color="green-lighten-5">
+    <v-card variant="tonal" color="green">
       <v-card-title class="text-h5">推荐资源</v-card-title>
       <v-card-text>
         <v-list>
@@ -117,7 +117,7 @@
 
     <div class="text-center mt-8">
       <p class="text-h6 mb-4">需要倾诉或寻求支持？</p>
-      <v-btn color="green" size="large" prepend-icon="mdi-email"> 联系我们 </v-btn>
+      <v-btn color="green" size="large" href="https://1kxfhpte.jsjform.com/f/TMcGoz" target="_blank" prepend-icon="mdi-message-text"> 联系我们 </v-btn>
     </div>
   </div>
 </template>
@@ -232,12 +232,6 @@ const resources = [
     title: '正念冥想指南',
     icon: 'mdi-meditation',
     description: '通过正念练习改善心理状态',
-    link: '#'
-  },
-  {
-    title: '心理健康自测',
-    icon: 'mdi-clipboard-check',
-    description: '了解自己的心理健康状况',
     link: '#'
   }
 ];

@@ -13,7 +13,7 @@
 
     <v-row class="mt-4" dense>
       <v-col cols="12" md="6">
-        <v-card class="info-card h-100" variant="tonal" color="green-lighten-5">
+        <v-card class="info-card h-100" variant="tonal" color="green">
           <v-card-title class="text-h6 d-flex align-center ga-2">
             <v-icon icon="mdi-check-circle" />
             成功案例
@@ -55,7 +55,7 @@
         </div>
 
         <div class="d-flex flex-wrap ga-3">
-          <v-btn color="green" size="large" to="/form" prepend-icon="mdi-file-document-edit">
+          <v-btn color="green" size="large" href="https://1kxfhpte.jsjform.com/f/TMcGoz" target="_blank" prepend-icon="mdi-file-document-edit">
             填写委托表
           </v-btn>
           <v-btn
@@ -104,7 +104,7 @@ const steps: IProcessStep[] = [
     ],
     action: {
       text: '立即填写',
-      to: '/form'
+      href: 'https://1kxfhpte.jsjform.com/f/TMcGoz'
     }
   },
   {
