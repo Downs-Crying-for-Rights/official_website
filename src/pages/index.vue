@@ -279,8 +279,8 @@ border hover          class="flex-grow-1"
           >
             <v-card-item>
               <div class="d-flex align-center ga-3">
-                <v-avatar size="48" rounded="lg" color="grey-lighten-3" v-if="link.icon">
-                  <span class="text-h6">{{ link.icon }}</span>
+                <v-avatar size="48" rounded="lg" v-if="link.icon">
+                  <v-img :src="link.icon" cover />
                 </v-avatar>
                 <v-avatar size="48" rounded="lg" v-else-if="link.image">
                   <v-img :src="link.image" cover />
@@ -619,6 +619,7 @@ const userReviews = [
 const friendlyLinks = [
   {
     name: '智教联盟',
+    icon: '/STCN-banner.png',
     category: 'SmartTeachCN',
     description:
       '天津静海汇智单创文化发展有限公司下属的独立公益性组织，致力于为教学辅助类应用提供全方面扶持与帮助，为全国最大的电教委在线交流平台。',
@@ -626,7 +627,7 @@ const friendlyLinks = [
   },
   {
     name: 'ClassIsland',
-    icon: 'CI',
+    icon: '/classisland.png',
     category: '课表显示工具',
     description:
       '适用于班级多媒体屏幕的课表信息显示工具，可在 Windows PC、Mac 及 Linux 设备上显示各种信息',
@@ -634,7 +635,7 @@ const friendlyLinks = [
   },
   {
     name: 'Class Widgets 2',
-    icon: 'CW',
+    icon: '/CW-logo.png',
     category: '电子化课程表',
     description: '新一代的电子化课程表展示工具，基于比前代更新的架构与设计语言重写',
     url: 'https://github.com/RinLit-233-shiroko/Class-Widgets-2?tab=readme-ov-file'
