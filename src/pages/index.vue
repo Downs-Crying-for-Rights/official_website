@@ -282,6 +282,9 @@ border hover          class="flex-grow-1"
                 <v-avatar size="48" rounded="lg" color="grey-lighten-3" v-if="link.icon">
                   <span class="text-h6">{{ link.icon }}</span>
                 </v-avatar>
+                <v-avatar size="48" rounded="lg" v-else-if="link.image">
+                  <v-img :src="link.image" cover />
+                </v-avatar>
                 <div>
                   <v-card-title class="text-body-1">{{ link.name }}</v-card-title>
                   <v-card-subtitle class="text-caption">{{ link.category }}</v-card-subtitle>
@@ -642,6 +645,14 @@ const friendlyLinks = [
     category: '教学打造工具',
     description: '专为广大中小学电教打造的班级素养打/数字白板/班牌通一站式软件推荐单和实用知识手册',
     url: 'https://github.com/awesome-iwb/awesome-iwb'
+  },
+  {
+    name: 'CN E Learning',
+    image: '/cnel.png',
+    category: '电教委员指南',
+    description:
+      '做一名优秀的电教员 — 提供电教委员指南、FAQ文档征集、多校联盟等支持服务，帮助学生电教员高效开展工作。',
+    url: 'http://cnel.smart-teach.cn/'
   }
 ];
 
