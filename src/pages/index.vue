@@ -645,7 +645,7 @@ const friendlyLinks = [
     image: '/aiwb-icon.png',
     category: '教学打造工具',
     description: '专为广大中小学电教打造的班级素养打/数字白板/班牌通一站式软件推荐单和实用知识手册',
-    url: 'https://github.com/awesome-iwb/awesome-iwb'
+    url: 'https://aiwb.smart-teach.cn/'
   },
   {
     name: 'CN E Learning',
